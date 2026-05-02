@@ -1,0 +1,22 @@
+{
+    "videos": [
+        {
+            "name": "Big Buck Bunny",
+            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            "duration": 596,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Elephant Dream",
+            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            "duration": 653,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Sintel",
+            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+            "duration": 888,
+            "mimeType": "video/mp4"
+        }
+    ]
+}

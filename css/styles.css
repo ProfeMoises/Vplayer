@@ -1,0 +1,456 @@
+/* ============================================
+   Variables CSS y Reset
+   ============================================ */
+:root {
+    --primary-color: #1a73e8;
+    --primary-dark: #1557b0;
+    --secondary-color: #4285f4;
+    --background: #0f0f0f;
+    --surface: #1e1e1e;
+    --surface-hover: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent: #ffd700;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ============================================
+   Layout principal
+   ============================================ */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chromecast-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Personalización del botón de Chromecast */
+google-cast-launcher {
+    --disconnected-color: var(--text-secondary);
+    --connected-color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+}
+
+/* ============================================
+   Contenido principal - Layout
+   ============================================ */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 24px;
+    padding-bottom: 24px;
+}
+
+/* ============================================
+   Sección del reproductor de video
+   ============================================ */
+.player-section {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* Overlay de Chromecast */
+.cast-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+}
+
+.cast-overlay.hidden {
+    display: none;
+}
+
+.cast-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.cast-overlay p {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Controles personalizados */
+.player-controls {
+    padding: 16px;
+}
+
+.video-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.video-info h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+#videoDuration {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #444;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar:hover {
+    height: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: width 0.1s linear;
+    width: 0%;
+}
+
+.time-display {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+}
+
+/* ============================================
+   Sección de playlist
+   ============================================ */
+.playlist-section {
+    background: var(--surface);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    max-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-section h3 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+.playlist-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.btn-secondary {
+    flex: 1;
+    padding: 8px 12px;
+    background: var(--surface-hover);
+    border: 1px solid #444;
+    color: var(--text-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: #3d3d3d;
+    border-color: var(--primary-color);
+}
+
+.btn-secondary.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.playlist {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos de los elementos de la playlist */
+.video-item {
+    padding: 12px;
+    background: var(--surface-hover);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.video-item:hover {
+    transform: translateX(4px);
+    border-color: var(--primary-color);
+}
+
+.video-item.active {
+    border-color: var(--accent);
+    background: #2a2a00;
+}
+
+.video-item-thumbnail {
+    width: 60px;
+    height: 34px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+    flex-shrink: 0;
+}
+
+.video-item-thumbnail video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.video-item-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.video-item-duration {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.video-item-status {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+/* Estados de carga y vacío */
+.loading-state,
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #333;
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.text-muted {
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   Scrollbar personalizado
+   ============================================ */
+.playlist::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlist::-webkit-scrollbar-track {
+    background: #2d2d2d;
+    border-radius: 4px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.playlist::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .playlist-section {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .player-controls {
+        padding: 12px;
+    }
+    
+    .video-info h2 {
+        font-size: 1rem;
+        max-width: 60%;
+    }
+    
+    .playlist-section {
+        padding: 16px;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    .header {
+        padding: 12px 0;
+        margin-bottom: 12px;
+    }
+    
+    .main-content {
+        gap: 12px;
+    }
+    
+    .video-item {
+        padding: 8px;
+    }
+    
+    .video-item-title {
+        font-size: 0.85rem;
+    }
+    
+    .btn-secondary {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+
+/* ============================================
+   Soporte para pantallas touch
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    .video-item:hover {
+        transform: none;
+    }
+    
+    .progress-bar {
+        height: 8px; /* Más fácil de tocar */
+    }
+}

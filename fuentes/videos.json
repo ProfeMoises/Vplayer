@@ -1,21 +1,51 @@
 {
     "videos": [
         {
-            "name": "Big Buck Bunny",
-            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-            "duration": 596,
+            "name": "Introducción",
+            "url": "https://drive.google.com/uc?export=download&id=1Qzc_JYc6nSpD8ndvAhHKLA6JXEWD2RmD",
+            "duration": 0,
             "mimeType": "video/mp4"
         },
         {
-            "name": "Elephant Dream",
-            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-            "duration": 653,
+            "name": "Capítulo 1",
+            "url": "https://drive.google.com/uc?export=download&id=130L5oBubziZQOjrgPC6ZEtksXTUp0C_i",
+            "duration": 0,
             "mimeType": "video/mp4"
         },
         {
-            "name": "Sintel",
-            "url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-            "duration": 888,
+            "name": "Capítulo 2",
+            "url": "https://drive.google.com/uc?export=download&id=1d0mY6VDLPUU6fMSU5NKQCiuqN9Tiw61j",
+            "duration": 0,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Capítulo 3",
+            "url": "https://drive.google.com/uc?export=download&id=1Aq8AgJsYNqCHAB1D7OP6tDesT-sg7YI9",
+            "duration": 0,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Capítulo 4",
+            "url": "https://drive.google.com/uc?export=download&id=14Q8byYn8kWPPOi8GoPGaZz6-7c7Z0J6Y",
+            "duration": 0,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Capítulo 5",
+            "url": "https://drive.google.com/uc?export=download&id=1qW2Ahk0mSYcZOF7CXRRWQH0SV2UQZifG",
+            "duration": 0,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Capítulo 6",
+            "url": "https://drive.google.com/uc?export=download&id=1duolyz3bh8A12EknAe8Mezk5zTHsmCZQ",
+            "duration": 0,
+            "mimeType": "video/mp4"
+        },
+        {
+            "name": "Capítulo 7",
+            "url": "https://drive.google.com/uc?export=download&id=16UOhjvOw4iD5_PQgThQVvF_2_3O5DamG",
+            "duration": 0,
             "mimeType": "video/mp4"
         }
     ]
